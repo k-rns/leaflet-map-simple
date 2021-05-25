@@ -33,9 +33,11 @@
     tap: false
   });
     
-   var myLayer = L.geoJSON().addTo(map);
-   myLayer.addData(geojsonFeature); 
-
+  // L.geoJson function is used to parse geojson file and load on to map  
+  .getJSON("https://github.com/k-rns/leaflet-map-simple/blob/main/deployments_geojsn.geojson",function(data){
+    L.geoJson(data).addTo(map);
+  });
+ 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
     'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {

@@ -19,7 +19,7 @@
 <body>
 
   <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">New Map</div>
+  <div id="map-title">BCO-DMO GeoViewer</div>
   <div id="map"></div>
 
   <!-- Create the interactive map content with JavaScript (.js) -->
@@ -32,6 +32,9 @@
     scrollWheelZoom: false,
     tap: false
   });
+    
+   var myLayer = L.geoJSON().addTo(map);
+   myLayer.addData(geojsonFeature); 
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
